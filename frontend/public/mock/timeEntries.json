@@ -1,0 +1,38 @@
+[
+  {
+    "id": "te_1",
+    "worklog_id": "wl_1",
+    "hours": 3,
+    "rate": 50,
+    "amount": 150,
+    "created_at": "2026-03-01T09:00:00.000Z",
+    "notes": "Initial wireframes"
+  },
+  {
+    "id": "te_2",
+    "worklog_id": "wl_1",
+    "hours": 6,
+    "rate": 50,
+    "amount": 300,
+    "created_at": "2026-03-02T10:00:00.000Z",
+    "notes": "Final UI assets"
+  },
+  {
+    "id": "te_3",
+    "worklog_id": "wl_2",
+    "hours": 8,
+    "rate": 90,
+    "amount": 720,
+    "created_at": "2026-03-10T14:30:00.000Z",
+    "notes": "Endpoints and integration tests"
+  },
+  {
+    "id": "te_4",
+    "worklog_id": "wl_3",
+    "hours": 5,
+    "rate": 60,
+    "amount": 300,
+    "created_at": "2026-02-20T11:15:00.000Z",
+    "notes": "Coverage for core services"
+  }
+]

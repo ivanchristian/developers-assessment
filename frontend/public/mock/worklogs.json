@@ -1,0 +1,23 @@
+[
+  {
+    "id": "wl_1",
+    "task": "Design marketing landing page",
+    "freelancer_id": "freelancer_1",
+    "created_at": "2026-03-01T09:00:00.000Z",
+    "total_amount": 450
+  },
+  {
+    "id": "wl_2",
+    "task": "Integrate payments API",
+    "freelancer_id": "freelancer_2",
+    "created_at": "2026-03-10T14:30:00.000Z",
+    "total_amount": 720
+  },
+  {
+    "id": "wl_3",
+    "task": "Write unit tests",
+    "freelancer_id": "freelancer_3",
+    "created_at": "2026-02-20T11:15:00.000Z",
+    "total_amount": 300
+  }
+]

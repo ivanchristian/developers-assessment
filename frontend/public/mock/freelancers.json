@@ -1,0 +1,17 @@
+[
+  {
+    "id": "freelancer_1",
+    "name": "Ivan Christian",
+    "email": "ivan@gmail.com"
+  },
+  {
+    "id": "freelancer_2",
+    "name": "Jensen Huang",
+    "email": "jensen@gmail.com"
+  },
+  {
+    "id": "freelancer_3",
+    "name": "Elon Musk",
+    "email": "elon@gmail.com"
+  }
+]

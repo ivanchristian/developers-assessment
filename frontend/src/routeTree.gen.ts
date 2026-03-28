@@ -18,6 +18,8 @@ import { Route as LayoutIndexRouteImport } from './routes/_layout/index'
 import { Route as LayoutSettingsRouteImport } from './routes/_layout/settings'
 import { Route as LayoutItemsRouteImport } from './routes/_layout/items'
 import { Route as LayoutAdminRouteImport } from './routes/_layout/admin'
+import { Route as LayoutWorklogIdRouteImport } from './routes/_layout/$worklogId'
+import { Route as LayoutPaymentReviewRouteImport } from './routes/_layout/payment.review'
 
 const SignupRoute = SignupRouteImport.update({
   id: '/signup',
@@ -63,26 +65,40 @@ const LayoutAdminRoute = LayoutAdminRouteImport.update({
   path: '/admin',
   getParentRoute: () => LayoutRoute,
 } as any)
+const LayoutWorklogIdRoute = LayoutWorklogIdRouteImport.update({
+  id: '/$worklogId',
+  path: '/$worklogId',
+  getParentRoute: () => LayoutRoute,
+} as any)
+const LayoutPaymentReviewRoute = LayoutPaymentReviewRouteImport.update({
+  id: '/payment/review',
+  path: '/payment/review',
+  getParentRoute: () => LayoutRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/login': typeof LoginRoute
   '/recover-password': typeof RecoverPasswordRoute
   '/reset-password': typeof ResetPasswordRoute
   '/signup': typeof SignupRoute
+  '/$worklogId': typeof LayoutWorklogIdRoute
   '/admin': typeof LayoutAdminRoute
   '/items': typeof LayoutItemsRoute
   '/settings': typeof LayoutSettingsRoute
   '/': typeof LayoutIndexRoute
+  '/payment/review': typeof LayoutPaymentReviewRoute
 }
 export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/recover-password': typeof RecoverPasswordRoute
   '/reset-password': typeof ResetPasswordRoute
   '/signup': typeof SignupRoute
+  '/$worklogId': typeof LayoutWorklogIdRoute
   '/admin': typeof LayoutAdminRoute
   '/items': typeof LayoutItemsRoute
   '/settings': typeof LayoutSettingsRoute
   '/': typeof LayoutIndexRoute
+  '/payment/review': typeof LayoutPaymentReviewRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -91,10 +107,12 @@ export interface FileRoutesById {
   '/recover-password': typeof RecoverPasswordRoute
   '/reset-password': typeof ResetPasswordRoute
   '/signup': typeof SignupRoute
+  '/_layout/$worklogId': typeof LayoutWorklogIdRoute
   '/_layout/admin': typeof LayoutAdminRoute
   '/_layout/items': typeof LayoutItemsRoute
   '/_layout/settings': typeof LayoutSettingsRoute
   '/_layout/': typeof LayoutIndexRoute
+  '/_layout/payment/review': typeof LayoutPaymentReviewRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -103,20 +121,24 @@ export interface FileRouteTypes {
     | '/recover-password'
     | '/reset-password'
     | '/signup'
+    | '/$worklogId'
     | '/admin'
     | '/items'
     | '/settings'
     | '/'
+    | '/payment/review'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/login'
     | '/recover-password'
     | '/reset-password'
     | '/signup'
+    | '/$worklogId'
     | '/admin'
     | '/items'
     | '/settings'
     | '/'
+    | '/payment/review'
   id:
     | '__root__'
     | '/_layout'
@@ -124,10 +146,12 @@ export interface FileRouteTypes {
     | '/recover-password'
     | '/reset-password'
     | '/signup'
+    | '/_layout/$worklogId'
     | '/_layout/admin'
     | '/_layout/items'
     | '/_layout/settings'
     | '/_layout/'
+    | '/_layout/payment/review'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -203,21 +227,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LayoutAdminRouteImport
       parentRoute: typeof LayoutRoute
     }
+    '/_layout/$worklogId': {
+      id: '/_layout/$worklogId'
+      path: '/$worklogId'
+      fullPath: '/$worklogId'
+      preLoaderRoute: typeof LayoutWorklogIdRouteImport
+      parentRoute: typeof LayoutRoute
+    }
+    '/_layout/payment/review': {
+      id: '/_layout/payment/review'
+      path: '/payment/review'
+      fullPath: '/payment/review'
+      preLoaderRoute: typeof LayoutPaymentReviewRouteImport
+      parentRoute: typeof LayoutRoute
+    }
   }
 }
 
 interface LayoutRouteChildren {
+  LayoutWorklogIdRoute: typeof LayoutWorklogIdRoute
   LayoutAdminRoute: typeof LayoutAdminRoute
   LayoutItemsRoute: typeof LayoutItemsRoute
   LayoutSettingsRoute: typeof LayoutSettingsRoute
   LayoutIndexRoute: typeof LayoutIndexRoute
+  LayoutPaymentReviewRoute: typeof LayoutPaymentReviewRoute
 }
 
 const LayoutRouteChildren: LayoutRouteChildren = {
+  LayoutWorklogIdRoute: LayoutWorklogIdRoute,
   LayoutAdminRoute: LayoutAdminRoute,
   LayoutItemsRoute: LayoutItemsRoute,
   LayoutSettingsRoute: LayoutSettingsRoute,
   LayoutIndexRoute: LayoutIndexRoute,
+  LayoutPaymentReviewRoute: LayoutPaymentReviewRoute,
 }
 
 const LayoutRouteWithChildren =
